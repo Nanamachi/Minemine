@@ -8,9 +8,9 @@ use Teng::Schema::Declare;
 base_row_class 'Minemine::DB::Row';
 
 table {
-    name 'member';
+    name 'rankings';
     pk 'id';
-    columns qw(id name);
+    columns qw(id name comment score missed sweeped runtime cleared_at);
 };
 
 1;

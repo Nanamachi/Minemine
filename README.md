@@ -1,8 +1,10 @@
-# minemine_front
+# minemine
 
 ## Project setup
 ```
 yarn install
+echo "CREATE DATABASE minemine;" | mysql -u user
+mysql -u user minemine < sql/mysql.sql
 ```
 
 ### Compiles and hot-reloads for development
