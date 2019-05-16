@@ -9,24 +9,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  data () {
-    return { 
-      opened: false,
-      marked: false,
-    }
-  },
   props: {
     row: Number,
     column: Number,
-    isMine: {
-      type: Boolean,
-      required: true,
-    },
-    surroundingMinesCount: {
-      type: Number,
-      required: true
-    }
+    addressNumber: Number,
   },
   computed: {
     state: function(){
@@ -45,24 +34,20 @@ export default {
         }
       }
       return '';
-    }
+    },
+    ...mapState({
+      isMine ( state ) { return state.boardState[this.addressNumber].isMine },
+      opened ( state ) { return state.boardState[this.addressNumber].opened },
+      marked ( state ) { return state.boardState[this.addressNumber].marked },
+      surroundingMinesCount ( state ) { return state.boardState[this.addressNumber].surroundingMinesCount },
+    })
   },
   methods: {
-    open: function () {
-      if (this.state === '') {
-        this.opened = true;
-        if (this.isMine) {
-          alert('Oops!');
-        }
-      }
+    open () {
+      this.$store.dispatch('open', this.addressNumber)
     },
-    mark: function () {
-      if (this.state === '') {
-        this.marked = true;
-        if (!this.isMine) {
-          alert('???');
-        }
-      }
+    mark () {
+      this.$store.dispatch('mark', this.addressNumber)
     }
   }
 }
