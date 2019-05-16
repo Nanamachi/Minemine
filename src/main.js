@@ -2,7 +2,12 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import App from './components/App.vue';
 
-Vue.use(Vuex)
+import BootstrapVue from 'bootstrap-vue';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+
+Vue.use(BootstrapVue);
+Vue.use(Vuex);
 
 const shuffle = ([...arr]) => {
   let m = arr.length;
@@ -128,6 +133,11 @@ const store = new Vuex.Store({
       return state.boardOption.mines
         - state.gameState.missed
         - state.gameState.sweeped;
+    },
+    score: (state) => {
+      return state.gameState.sweeped * 10
+        - state.gameState.missed * 100
+        - ( Date.now() - state.gameState.startedAt ) / 1000;
     }
   }
 })

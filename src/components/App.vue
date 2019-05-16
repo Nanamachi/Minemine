@@ -3,11 +3,13 @@
     <h1>{{ title }}</h1>
     <p>Sweep/Miss/Remain : {{sweeped}}/{{missed}}/{{remainingMines}}</p>
     <MinesweeperMain />
+    <RankingForm v-if="remainingMines === 0" />
   </div>
 </template>
 
 <script>
 import MinesweeperMain from './MinesweeperMain.vue';
+import RankingForm from './RankingForm.vue';
 import { mapState, mapGetters } from 'vuex';
 
 export default{
@@ -16,7 +18,7 @@ export default{
       title: 'Try this!'
     }
   },
-  components: {MinesweeperMain},
+  components: {MinesweeperMain, RankingForm},
   computed: {
     ...mapState({
       missed: state => state.gameState.missed,
