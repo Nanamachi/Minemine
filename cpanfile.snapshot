@@ -210,6 +210,19 @@ DISTRIBUTIONS
       perl 5.006
       strict 0
       warnings 0
+  Class-Method-Modifiers-2.12
+    pathname: E/ET/ETHER/Class-Method-Modifiers-2.12.tar.gz
+    provides:
+      Class::Method::Modifiers 2.12
+    requirements:
+      B 0
+      Carp 0
+      Exporter 0
+      ExtUtils::MakeMaker 0
+      base 0
+      perl 5.006
+      strict 0
+      warnings 0
   Class-Singleton-1.5
     pathname: S/SH/SHAY/Class-Singleton-1.5.tar.gz
     provides:
@@ -404,6 +417,31 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 6.36
       Test::More 0.96
       Try::Tiny 0
+  Data-Dump-1.23
+    pathname: G/GA/GAAS/Data-Dump-1.23.tar.gz
+    provides:
+      Data::Dump 1.23
+      Data::Dump::FilterContext undef
+      Data::Dump::Filtered undef
+      Data::Dump::Trace 0.02
+      Data::Dump::Trace::Call 0.02
+      Data::Dump::Trace::Wrapper 0.02
+    requirements:
+      ExtUtils::MakeMaker 0
+      Symbol 0
+      Test 0
+      perl 5.006
+  Data-Dumper-Concise-2.023
+    pathname: E/ET/ETHER/Data-Dumper-Concise-2.023.tar.gz
+    provides:
+      Data::Dumper::Concise 2.023
+      Data::Dumper::Concise::Sugar 2.023
+      Devel::Dwarn undef
+    requirements:
+      Data::Dumper 0
+      Exporter 0
+      ExtUtils::MakeMaker 0
+      perl 5.006
   Data-MessagePack-1.00
     pathname: S/SY/SYOHEX/Data-MessagePack-1.00.tar.gz
     provides:
@@ -451,6 +489,37 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 6.42
       Test::More 0.96
       perl 5.008001
+  Data-Serializer-0.60
+    pathname: N/NE/NEELY/Data-Serializer-0.60.tar.gz
+    provides:
+      Data::Serializer 0.60
+      Data::Serializer::Bencode 0.03
+      Data::Serializer::Config::General 0.02
+      Data::Serializer::Convert::Bencode 0.03
+      Data::Serializer::Convert::Bencode_XS 0.03
+      Data::Serializer::Cookbook 0.05
+      Data::Serializer::Data::Denter 0.02
+      Data::Serializer::Data::Dumper 0.05
+      Data::Serializer::Data::Taxi 0.02
+      Data::Serializer::FreezeThaw 0.02
+      Data::Serializer::JSON 0.04
+      Data::Serializer::JSON::Syck 0.02
+      Data::Serializer::PHP::Serialization 0.02
+      Data::Serializer::Persistent 0.01
+      Data::Serializer::Raw 0.02
+      Data::Serializer::Storable 0.03
+      Data::Serializer::XML::Dumper 0.02
+      Data::Serializer::XML::Simple 0.03
+      Data::Serializer::YAML 0.02
+      Data::Serializer::YAML::Syck 0.02
+    requirements:
+      AutoLoader 0
+      Data::Dumper 2.08
+      Digest::SHA 0
+      Exporter 0
+      File::Spec 0
+      IO::File 0
+      Test::More 0
   DateTime-1.51
     pathname: D/DR/DROLSKY/DateTime-1.51.tar.gz
     provides:
@@ -923,6 +992,14 @@ DISTRIBUTIONS
       Test::More 0.98
       parent 0
       perl 5.008001
+  Devel-Hide-0.0010
+    pathname: F/FE/FERREIRA/Devel-Hide-0.0010.tar.gz
+    provides:
+      Devel::Hide 0.0010
+    requirements:
+      ExtUtils::MakeMaker 0
+      File::Temp 0
+      perl 5.006001
   Devel-PPPort-3.51
     pathname: E/ET/ETHER/Devel-PPPort-3.51.tar.gz
     provides:
@@ -1815,6 +1892,49 @@ DISTRIBUTIONS
       WWW::Form::UrlEncoded 0.23
       parent 0
       perl 5.008001
+  Plack-Middleware-Debug-0.17
+    pathname: M/MI/MIYAGAWA/Plack-Middleware-Debug-0.17.tar.gz
+    provides:
+      Plack::Middleware::Debug 0.17
+      Plack::Middleware::Debug::Base 0.17
+      Plack::Middleware::Debug::CatalystLog 0.17
+      Plack::Middleware::Debug::DBITrace 0.17
+      Plack::Middleware::Debug::Environment 0.17
+      Plack::Middleware::Debug::Memory 0.17
+      Plack::Middleware::Debug::ModuleVersions 0.17
+      Plack::Middleware::Debug::Panel undef
+      Plack::Middleware::Debug::Parameters undef
+      Plack::Middleware::Debug::PerlConfig 0.17
+      Plack::Middleware::Debug::Response 0.17
+      Plack::Middleware::Debug::Session undef
+      Plack::Middleware::Debug::Timer 0.17
+      Plack::Middleware::Debug::TrackObjects undef
+    requirements:
+      Class::Method::Modifiers 1.05
+      Data::Dump 0
+      Data::Dumper::Concise 0
+      Encode 2.23
+      File::ShareDir 1.00
+      Module::Build::Tiny 0.034
+      Plack 0
+      Text::MicroTemplate 0.15
+      parent 0
+      perl 5.008001
+  Plack-Middleware-DebugLogging-0.001005
+    pathname: M/MA/MATTP/Plack-Middleware-DebugLogging-0.001005.tar.gz
+    provides:
+      Plack::Middleware::DebugLogging 0.001005
+    requirements:
+      Data::Dumper::Concise 0
+      Data::Serializer::Raw 0
+      ExtUtils::MakeMaker 0
+      HTTP::Message 0
+      Module::Runtime 0
+      Plack 0
+      Term::Size::Any 0
+      Test::LongString 0
+      Text::SimpleTable 0
+      Try::Tiny 0
   Plack-Middleware-ReverseProxy-0.16
     pathname: M/MI/MIYAGAWA/Plack-Middleware-ReverseProxy-0.16.tar.gz
     provides:
@@ -2106,6 +2226,24 @@ DISTRIBUTIONS
       Scalar::Util 0
       parent 0
       perl 5.008_001
+  Term-Size-Any-0.002
+    pathname: F/FE/FERREIRA/Term-Size-Any-0.002.tar.gz
+    provides:
+      Term::Size::Any 0.002
+    requirements:
+      Devel::Hide 0
+      ExtUtils::MakeMaker 0
+      Module::Load::Conditional 0
+      Term::Size::Perl 0
+      Test::More 0
+  Term-Size-Perl-0.031
+    pathname: F/FE/FERREIRA/Term-Size-Perl-0.031.tar.gz
+    provides:
+      Term::Size::Perl 0.031
+    requirements:
+      Exporter 0
+      ExtUtils::CBuilder 0
+      ExtUtils::MakeMaker 0
   Test-Deep-1.128
     pathname: R/RJ/RJBS/Test-Deep-1.128.tar.gz
     provides:
@@ -2272,6 +2410,25 @@ DISTRIBUTIONS
       perl 5.006
       strict 0
       warnings 0
+  Text-MicroTemplate-0.24
+    pathname: K/KA/KAZUHO/Text-MicroTemplate-0.24.tar.gz
+    provides:
+      Text::MicroTemplate 0.24
+      Text::MicroTemplate::EncodedString 0.24
+      Text::MicroTemplate::File undef
+    requirements:
+      ExtUtils::MakeMaker 6.59
+      File::Temp 0
+      Test::More 0
+      perl 5.00800
+  Text-SimpleTable-2.07
+    pathname: M/MR/MRAMBERG/Text-SimpleTable-2.07.tar.gz
+    provides:
+      Text::SimpleTable 2.07
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test::More 0
+      perl 5.008001
   Text-Xslate-v3.5.6
     pathname: S/SK/SKAJI/Text-Xslate-v3.5.6.tar.gz
     provides:

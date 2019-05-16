@@ -6,6 +6,7 @@ our $VERSION='0.01';
 use 5.008001;
 use Minemine::DB::Schema;
 use Minemine::DB;
+use DBIx::Handler;
 
 use parent qw/Amon2/;
 # Enable project local mode.
@@ -28,6 +29,15 @@ sub db {
         );
     }
     $c->{db};
+}
+
+sub handler {
+  my $c = shift;
+  if (!exists $c->{handler}) {
+    my ($dsn, $user, $pass, $opt) = @{$c->config->{DBI}};
+    $c->{handler} = DBIx::Handler->connect($dsn, $user, $pass, $opt);
+  }
+  $c->{handler};
 }
 
 1;

@@ -15,7 +15,7 @@ sub dispatch {
 __PACKAGE__->load_plugins(
     'Web::FillInFormLite',
     'Web::JSON',
-    '+Minemine::Web::Plugin::Session',
+    '+Minemine::Web::Plugin::Response',
 );
 
 # setup view

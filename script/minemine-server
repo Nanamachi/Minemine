@@ -20,6 +20,10 @@ my $app = builder {
         path => qr{^(?:/robots\.txt|/favicon\.ico)$},
         root => File::Spec->catdir(dirname(__FILE__), '..', 'static');
     enable 'Plack::Middleware::ReverseProxy';
+    
+    enable 'Plack::Middleware::Debug';
+    enable 'Plack::Middleware::DebugLogging';
+    enable 'Plack::Middleware::StackTrace', force => 1;
 
     Minemine::Web->to_app();
 };
