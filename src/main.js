@@ -97,9 +97,9 @@ const store = new Vuex.Store({
         }
       }
     },
-    mark (context, key) {
-      context.commit('_mark', key)
-    }
+    mark ({ commit }, key) {
+      commit('_mark', key)
+    },
   },
   getters: {
     surroundingCells: state => key => {
