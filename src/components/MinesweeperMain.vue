@@ -32,7 +32,7 @@ const shuffle = ([...arr]) => {
 export default{
   data () {
     return {
-      size: [ 30, 50 ],
+      size: [ 10, 10 ],
     }
   },
   components: {MinesweeperCell},
