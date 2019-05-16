@@ -1,11 +1,15 @@
 <template>
   <div class="board">
-    <div v-for="j in Array(size[0]).keys()" class="row">
+    <div
+      v-for="j in Array(size[0]).keys()"
+      v-bind:key="`row-${j}`"
+      class="row"
+    >
       <MinesweeperCell
         v-for="i in Array(size[1]).keys()"
         v-bind:row="j"
         v-bind:column="i"
-        v-bind:key="j * size[1] + i"
+        v-bind:key="`cell-${j * size[1] + i}`"
         v-bind:is-mine="minePosition.includes(j * size[1] + i) ? true : false"
         v-bind:surrounding-mines-count="surroundingMinesCount(j, i)"
       />
@@ -45,12 +49,12 @@ export default{
     surroundingMinesCount (row, column) {
       let minesCount = 0;
       for (let i = row - 1; i < row + 2; i++){
-        if ( i < 0 ) { continue };
-        if ( i >= this.size[0] ) { continue };
+        if ( i < 0 ) { continue }
+        if ( i >= this.size[0] ) { continue }
         for (let j = column - 1; j < column + 2; j++){
-          if ( j < 0 ) { continue };
-          if ( j >= this.size[1] ) { continue };
-          if ( i === row && j == column ) { continue };
+          if ( j < 0 ) { continue }
+          if ( j >= this.size[1] ) { continue }
+          if ( i === row && j == column ) { continue }
           if ( this.minePosition.includes( i * this.size[1] + j ) ) {
             minesCount++;
           }
