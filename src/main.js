@@ -88,7 +88,7 @@ const store = new Vuex.Store({
   actions: {
     open (context, key) {
       let s = context.state.boardState[key];
-      if (!s.opened) {
+      if (!s.opened && !s.marked) {
         context.commit('_open', key);
         if (s.surroundingMinesCount === 0 && !s.isMine) {
           this.getters.surroundingCells(key).forEach( function (s) {
