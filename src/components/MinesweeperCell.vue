@@ -23,7 +23,11 @@ export default {
         if (this.isMine) {
           return "x"
         } else {
-          return this.surroundingMinesCount
+          if (this.surroundingMinesCount !== 0) {
+            return this.surroundingMinesCount
+          } else{
+            return ''
+          }
         }
       }
       if (this.marked) {
