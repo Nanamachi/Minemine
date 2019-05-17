@@ -19,9 +19,8 @@ sub get_ranking{
 sub post_ranking {
   my ($class, $c) = @_;
 
-  my $record = $c->req->body;
-
-  $DB::single = 1;
+  my $record = decode_json( $c->req->content )
+    or return $c->res_400_json;
 
   my $id = Minemine::Repository::Rankings->create($c, $record)
     or return $c->res_400_json;

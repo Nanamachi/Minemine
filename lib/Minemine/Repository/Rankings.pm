@@ -31,8 +31,7 @@ sub create {
   my $sth = $dbh->prepare(
     "insert into rankings (
       name, comment, score, missed, sweeped, runtime, cleared_at
-    ) values (?, ?, ?, ?, ?, ?, ?)");
-  $DB::single = 1;
+    ) values (?, ?, ?, ?, ?, ?, cast(? as datetime))");
   $sth->bind_param(1, $record->{name});
   $sth->bind_param(2, $record->{comment});
   $sth->bind_param(3, $record->{score});
