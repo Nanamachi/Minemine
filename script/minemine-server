@@ -20,6 +20,10 @@ my $app = builder {
         path => qr{^(?:/robots\.txt|/favicon\.ico)$},
         root => File::Spec->catdir(dirname(__FILE__), '..', 'static');
     enable 'Plack::Middleware::ReverseProxy';
+    enable 'Plack::Middleware::CrossOrigin',
+      origins => 'http://localhost:8080',
+      headers => '*',
+      methods => ['GET', 'POST'];
     
     enable 'Plack::Middleware::Debug';
     enable 'Plack::Middleware::DebugLogging';

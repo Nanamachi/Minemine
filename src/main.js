@@ -27,8 +27,11 @@ const store = new Vuex.Store({
     boardState: [],
     gameState: {
       startedAt: null,
+      clearedAt: null,
+      runtime: null,
       missed: 0,
       sweeped: 0,
+      rankingPosted: false,
     }
   },
   mutations: {
@@ -69,7 +72,7 @@ const store = new Vuex.Store({
         }
       }
       if (!state.gameState.startedAt) {
-        state.gameState.startedAt = Date.now();
+        state.gameState.startedAt = new Date();
       }
     },
     _mark (state, key) {
@@ -82,8 +85,17 @@ const store = new Vuex.Store({
           state.gameState.sweeped++;
         }
       }
+    },
+    _finish (state) {
+      state.gameState.clearedAt = new Date();
+      state.gameState.runtime = (
+        state.gameState.clearedAt
+        - state.gameState.startedAt
+      ) / 1000;
+    },
+    rankingPosted (state) {
+      state.gameState.rankingPosted = true;
     }
-
   },
   actions: {
     open (context, key) {
@@ -99,6 +111,9 @@ const store = new Vuex.Store({
     },
     mark ({ commit }, key) {
       commit('_mark', key)
+      if (this.getters.remainingMines === 0) {
+        commit('_finish')
+      }
     },
   },
   getters: {
@@ -137,8 +152,8 @@ const store = new Vuex.Store({
     score: (state) => {
       return state.gameState.sweeped * 10
         - state.gameState.missed * 100
-        - ( Date.now() - state.gameState.startedAt ) / 1000;
-    }
+        - state.gameState.runtime;
+    },
   }
 })
 

@@ -7,6 +7,7 @@ requires 'HTTP::Session2', '1.03';
 requires 'JSON', '2.50';
 requires 'Module::Functions', '2';
 requires 'Plack::Middleware::ReverseProxy', '0.09';
+requires 'Plack::Middleware::CrossOrigin';
 requires 'Plack::Middleware::Debug';
 requires 'Plack::Middleware::StackTrace';
 requires 'Plack::Middleware::DebugLogging';

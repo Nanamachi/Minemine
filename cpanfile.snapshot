@@ -1892,6 +1892,16 @@ DISTRIBUTIONS
       WWW::Form::UrlEncoded 0.23
       parent 0
       perl 5.008001
+  Plack-Middleware-CrossOrigin-0.014
+    pathname: H/HA/HAARG/Plack-Middleware-CrossOrigin-0.014.tar.gz
+    provides:
+      Plack::Middleware::CrossOrigin 0.014
+    requirements:
+      Plack::Middleware 0
+      Plack::Util 0
+      Plack::Util::Accessor 0
+      parent 0
+      perl 5.008
   Plack-Middleware-Debug-0.17
     pathname: M/MI/MIYAGAWA/Plack-Middleware-Debug-0.17.tar.gz
     provides:
@@ -1935,6 +1945,19 @@ DISTRIBUTIONS
       Test::LongString 0
       Text::SimpleTable 0
       Try::Tiny 0
+  Plack-Middleware-JSONParser-0.02
+    pathname: Y/YO/YOSUKEF/Plack-Middleware-JSONParser-0.02.tar.gz
+    provides:
+      Plack::Middleware::JSONParser 0.02
+    requirements:
+      CPAN::Meta 0
+      CPAN::Meta::Prereqs 0
+      ExtUtils::CBuilder 0
+      Hash::MultiValue 0
+      Module::Build 0.38
+      Plack::Middleware 0
+      Plack::Request 0
+      perl 5.008001
   Plack-Middleware-ReverseProxy-0.16
     pathname: M/MI/MIYAGAWA/Plack-Middleware-ReverseProxy-0.16.tar.gz
     provides:
